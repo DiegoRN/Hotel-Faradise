@@ -1,4 +1,5 @@
 # Hotel Faradise
- Juego de D2D
- Prueba de
- [actualizacion](https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley)
+
+Juego para la asignatura D2D
+
+Juego de plataformmas 2d para 1/2 jugadores hecho en Unity2D como proyecto de clase entr varios compañeros
