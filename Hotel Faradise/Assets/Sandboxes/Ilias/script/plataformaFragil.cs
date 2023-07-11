@@ -8,7 +8,7 @@ public class plataformaFragil : MonoBehaviour
     BoxCollider2D bc;
     public float timeToDrop = 0.5f;
     private float timeToDestroy = 4f;
-
+    private bool alreadyFallen = false;
     public float spawnTime = 2f;
     public GameObject plataformaPrefab;
     private Vector2 positionSpawn;
@@ -29,7 +29,8 @@ public class plataformaFragil : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col) {
-        if(col.gameObject.tag.Equals("Player") ){
+        if(!alreadyFallen && col.gameObject.tag.Equals("Player") ){
+            alreadyFallen = true;
             Invoke("SpawnPlatform", spawnTime);
             Invoke("DropPlatform", timeToDrop);
             Invoke("DestroyObject", timeToDestroy);
@@ -47,6 +48,7 @@ public class plataformaFragil : MonoBehaviour
     void SpawnPlatform()
     {
         var newPlat = GameObject.Instantiate(plataformaPrefab, positionSpawn, Quaternion.identity);
+        newPlat.name = "NewPlatform";
     }
 
     void DestroyObject(){
