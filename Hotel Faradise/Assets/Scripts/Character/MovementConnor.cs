@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -65,17 +66,13 @@ public class MovementConnor : MonoBehaviour
             _body.velocity = new Vector2(0, _body.velocity.y);
             gunSight.SetActive(true);
             float verticalAxis = Input.GetAxis("Vertical joyconR joystick");
-            if (verticalAxis > 0)
+            if(Math.Abs(verticalAxis) > 0.4f)
             {
-                rotateGunsight += 100f * Time.deltaTime;
-                if (rotateGunsight > 90) rotateGunsight = 90;
+                float sign = Math.Sign(verticalAxis);
+                rotateGunsight += sign * 100f * Time.deltaTime;
+                if (Math.Abs(rotateGunsight) > 90) rotateGunsight = 90 * sign;
+                gunSight.transform.rotation = Quaternion.Euler(0, 0, - rotateGunsight * lookingAtRight);
             }
-            else if (verticalAxis < 0)
-            {
-                rotateGunsight -= 100f * Time.deltaTime;
-                if (rotateGunsight < -90) rotateGunsight = -90;
-            }
-            gunSight.transform.rotation = Quaternion.Euler(0, 0, rotateGunsight * lookingAtRight);
         }
         else
         {

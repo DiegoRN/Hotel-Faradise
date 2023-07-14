@@ -62,12 +62,12 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
-    dead: 0
+    dead: 0.9
     sensitivity: 4
     snap: 0
     invert: 0
     type: 2
-    axis: 8
+    axis: 0
     joyNum: 1
   - serializedVersion: 3
     m_Name: Horizontal joyconR joystick
@@ -78,12 +78,12 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
-    dead: 0
+    dead: 0.4
     sensitivity: 4
     snap: 0
     invert: 0
     type: 2
-    axis: 8
+    axis: 0
     joyNum: 2
   - serializedVersion: 3
     m_Name: Vertical
@@ -110,12 +110,12 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
-    dead: 0
+    dead: 0.4
     sensitivity: 4
     snap: 0
     invert: 0
     type: 2
-    axis: 9
+    axis: 1
     joyNum: 1
   - serializedVersion: 3
     m_Name: Vertical joyconR joystick
@@ -126,12 +126,12 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
-    dead: 0
+    dead: 0.4
     sensitivity: 4
     snap: 0
     invert: 0
     type: 2
-    axis: 9
+    axis: 1
     joyNum: 2
   - serializedVersion: 3
     m_Name: Fire3

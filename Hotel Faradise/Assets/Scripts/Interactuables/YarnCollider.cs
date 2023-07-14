@@ -50,13 +50,18 @@ public class YarnCollider : MonoBehaviour
     }
 
     public void OnTriggerEnter2D(Collider2D col){
-       // if(Toca a Kate o connor){
+        if(col.CompareTag("Player"))
+        {
             if (interactable && !dialogueRunner.IsDialogueRunning) {
                 // then run this character's conversation
                 StartConversation();
                 DisableConversation();
                 dialogueThrown = true;
+                if(activateAfterDialogue)
+                {
+                    Destroy(activateAfterDialogue);
+                }
         }
-       // }
+       }
     }
 }

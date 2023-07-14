@@ -265,6 +265,9 @@ public class Kate1 : MonoBehaviour
                     }
                     break;
                 case 2:
+                    if (activeClavos[0] == null) return;
+                    if (activeClavos[1] == null) return;
+
                     GameObject clavoToSelect1 = activeClavos[0].transform.GetChild(0).gameObject;
                     GameObject clavoToSelect2 = activeClavos[1].transform.GetChild(0).gameObject;
                     Debug.Log(clavoToSelect1.name);
